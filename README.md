@@ -6,3 +6,6 @@ Ao utilizar esses códigos, tenha certeza de mudar nome de varíaveis, ordem de 
 Esse repositório será deletado sob qualquer suspeita de violação dessa regra.
 
 Adicione seus códigos também, se achar necessário.
+
+19/09: Por inexperiência, as pastas "Aula06" e "LABOO2019" não estão mais acessíveis. 
+Para acesso aos códigos da aula 06, acesse a pasta "Fornecidos".
