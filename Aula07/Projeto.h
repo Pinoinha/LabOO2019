@@ -8,20 +8,29 @@ using namespace std;
 
 class Projeto {
 public:
-    Projeto(string nome, int maximoValor);
-    ~Projeto();
+    Projeto (string nome, int maximoValor);
+    ~Projeto ();
 
-    int getDuracao();
-    int getQuantidadeAtividades();
-    Atividade** getAtividades();
+    int getDuracao ();
+    int getQuantidadeAtividades ();
+    Atividade** getAtividades ();
+    Atividade** getAtividadesSemSupervisor (int &quantidade);
 
-    bool adicionar(Atividade* a);
+    Pessoa** getPessoas ();
+    int getQuantidadePessoas ();
+
+    bool adicionar (Atividade* a);
+    bool adicionar (Pessoa* p);
 
 private:
     string nome;
     int maximoValor;
     int quantidadeAtividades;
+    int quantidadePessoas;
     Atividade** atividades;
+    Atividade** atividadesSemSupervisor;
+    Pessoa** pessoasAdicionadas;
+
 };
 
 #endif // PROJETO_H

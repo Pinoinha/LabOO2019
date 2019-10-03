@@ -14,7 +14,10 @@ private:
 public:
     AtividadeComSupervisor(string nome, int horasNecessarias, int maximoPessoas, Pessoa* supervisor);
     ~AtividadeComSupervisor();
+
     Pessoa* getSupervisor();
+
+    bool adicionar(Pessoa* p);
 };
 
 #endif // ATIVIDADECOMSUPERVISOR_H

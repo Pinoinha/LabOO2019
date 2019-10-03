@@ -12,3 +12,12 @@ AtividadeComSupervisor::~AtividadeComSupervisor() {
 Pessoa* AtividadeComSupervisor::getSupervisor() {
     return this->supervisor;
 }
+
+bool AtividadeComSupervisor::adicionar (Pessoa* p) {
+    if (quantidade < maximoPessoas && p != this->getSupervisor()) {
+        pessoas[quantidade++] = p;
+        cout << "Pessoa adicionada." << endl;
+        return true;
+    }
+    return false;
+}

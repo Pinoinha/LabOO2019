@@ -22,6 +22,7 @@ int Atividade::getHorasNecessarias() {
 bool Atividade::adicionar(Pessoa* p) {
     if (quantidade < maximoPessoas) {
         pessoas[quantidade++] = p;
+        cout << "Pessoa adicionada." << endl;
         return true;
     }
     return false;
