@@ -12,7 +12,9 @@ public:
     Recurso(string nome);
     virtual ~Recurso();
 
-    string getNome();
+    virtual double getCusto (int dias) = 0;
+
+    virtual string getNome();
 
 private:
     string nome;

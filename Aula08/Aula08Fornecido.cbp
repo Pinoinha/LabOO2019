@@ -33,6 +33,8 @@
 			<Add option="-std=c++11" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="FuncionarioUSP.cpp" />
+		<Unit filename="FuncionarioUSP.h" />
 		<Unit filename="Pessoa.cpp" />
 		<Unit filename="Pessoa.h" />
 		<Unit filename="Recurso.cpp" />
