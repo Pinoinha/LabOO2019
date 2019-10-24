@@ -14,9 +14,15 @@ Projeto::~Projeto() {
 
 int Projeto::getDuracao() {
     int duracao = 0;
-    for (int i = 0; i < quantidadeAtividades; i++) {
-        duracao += atividades[i]->getDuracao();
-    }
+        for (int i = 0; i < quantidadeAtividades; i++) {
+            try {
+                duracao += atividades[i]->getDuracao();
+            } catch (logic_error *e) {
+                delete e;
+                return 0;
+            }
+        }
+
     return duracao;
 }
 

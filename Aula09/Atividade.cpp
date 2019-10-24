@@ -1,8 +1,11 @@
-#include "Atividade.h"
+#include <stdexcept>
 
+#include "Atividade.h"
 
 Atividade::Atividade(string nome, int horasNecessarias, int maximoPessoas) : nome(nome),
                      horasNecessarias(horasNecessarias), maximoPessoas(maximoPessoas) {
+    if (horasNecessarias <= 0 || maximoPessoas <= 0)
+      throw new invalid_argument ("horasNecessarias ou maximoPessoas menor ou igual a zero.");
 
     this->pessoas = new Pessoa*[maximoPessoas];
     this->quantidade = 0;
@@ -19,16 +22,28 @@ int Atividade::getHorasNecessarias() {
     return horasNecessarias;
 }
 
-bool Atividade::adicionar(Pessoa* p) {
-    if (quantidade < maximoPessoas) {
-        pessoas[quantidade++] = p;
-        return true;
+void Atividade::adicionar(Pessoa* p) {
+    if (p == NULL)
+      throw new invalid_argument ("Pessoa invalida.");
+
+    // Percorrendo o vetor de pessoas pra ver se p e repetida
+    for (int i = 0; i < quantidade; i++) {
+      if (p == pessoas[i])
+        throw new ErroRecursosRepetidos ("Pessoa ja adicionada.");
     }
-    return false;
+
+    if (this->quantidade == this->maximoPessoas)
+      throw new overflow_error ("Vetor de pessoas cheio.");
+
+    if (quantidade < maximoPessoas)
+      pessoas[quantidade++] = p;
 }
 
 int Atividade::getDuracao() {
     double horas = 0;
+
+    if (this->quantidade == 0)
+      throw new logic_error ("Nao ha pessoas adicionadas a atividade.");
 
     if (quantidade == 0)
         return -1;

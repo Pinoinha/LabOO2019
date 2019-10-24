@@ -5,6 +5,7 @@
 #include <string>
 #include <cmath>
 
+#include "ErroRecursosRepetidos.h"
 #include "Pessoa.h"
 
 using namespace std;
@@ -22,7 +23,7 @@ public:
     virtual ~Atividade();
     int getHorasNecessarias();
 
-    virtual bool adicionar(Pessoa* p);
+    virtual void adicionar(Pessoa* p);
     int getDuracao();
     void imprimir();
   };
